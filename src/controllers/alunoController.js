@@ -37,8 +37,8 @@ const createAluno = async (req, res) => {
 
 const updateAluno = async (req, res) => {
     try {
-        const { name, sala_id } = req.body;
-        const updateAluno = await alunoModel.updateAluno(req.params.id, name, sala_id);
+        const { name, sala_id, idade } = req.body;
+        const updateAluno = await alunoModel.updateAluno(req.params.id, name, sala_id, idade);
         if (!updateAluno) {
             return res.status(404).json({ message: "Aluno não encontrado!" });
         }
