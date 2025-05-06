@@ -1,57 +1,57 @@
-const classModel = require("../models/classModel");
+const salaModel = require("../models/salaModel");
 
-const getAllClasses = async (req, res) => {
+const getAllSalas = async (req, res) => {
     try {
-        const classes = await classModel.getClasses();
-        res.json(classes);
+        const salas = await salaModel.getSalas();
+        res.json(salas);
     } catch (error) {
         res.status(500).json({ message: "Erro ao buscar Sala!" });
     }
 };
 
-const getClass = async (req, res) => {
+const getSala = async (req, res) => {
     try {
-        const class = await classModel.getClassById(req.params.id);
-        if (!class) {
+        const sala = await salaModel.getSalaById(req.params.id);
+        if (!sala) {
             return res.status(404).json({ message: "Sala não encontrada!" });
         }
-        res.json(class);
+        res.json(sala);
     } catch (error) {
         res.status(500).json({ message: "Erro ao buscar Sala!" });
     }
 };
 
-const createClass = async (req, res) => {
+const createSala = async (req, res) => {
     try {
         const { name } = req.body;
-        const newClass = await classModel.createClass(name);
-        res.status(201).json(newClass);
+        const newSala = await salaModel.createSala(name);
+        res.status(201).json(newSala);
     } catch (error) {
         res.status(500).json({ message: "Erro ao criar sala!" });
     }
 };
 
-const updateClass = async (req, res) => {
+const updateSala = async (req, res) => {
     try {
         const { name } = req.body;
-        const updateClass = await classModel.updateClass(req.params.id, name);
-        if (!updateClass) {
+        const updateSala = await salaModel.updateSala(req.params.id, name);
+        if (!updateSala) {
             return res.status(404).json({ message: "Sala não encontrada!" });
         }
-        res.json(updateClass);
+        res.json(updateSala);
     } catch (error) {
         console.error(error)
         res.status(500).json({ message: "Erro ao atualizar Sala!" });
     }
 };
 
-const deleteClass = async (req, res) => {
+const deleteSala = async (req, res) => {
     try {
-        const message = await classModel.deleteClass(req.params.id);
+        const message = await salaModel.deleteSala(req.params.id);
         res.json(message);
     } catch (error) {
         res.status(500).json({ message: "Erro ao deletar Sala!" });
     }
 };
 
-module.exports = { getAllClasses, getClass, createClass, updateClass, deleteClass };
+module.exports = { getAllSalas, getSala, createSala, updateSala, deleteSala };
