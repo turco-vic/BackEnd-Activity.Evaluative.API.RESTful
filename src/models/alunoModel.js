@@ -1,7 +1,7 @@
 const pool = require("../config/database");
 
-const getAlunos = async (idade) => {
-    if (!idade) {
+const getAlunos = async (name) => {
+    if (!name) {
         const result = await pool.query(`
             SELECT alunos.id, alunos.name AS aluno_name, salas.name AS sala_name, alunos.idade AS aluno_idade
                 FROM alunos
@@ -11,11 +11,8 @@ const getAlunos = async (idade) => {
     }
     else {
         const result = await pool.query(`            
-            SELECT alunos.id, alunos.idade AS aluno_idade, salas.name AS sala_name
-                FROM alunos
-            LEFT JOIN salas ON alunos.sala_id = salas.id
-            WHERE alunos.idade ILIKE $1`,
-            [`%${idade}%`]);
+            SELECT * FROM alunos WHERE name LIKE $1`,
+            [`%${name}%`]);
         return result.rows;
     }
 }; 
