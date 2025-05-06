@@ -25,11 +25,12 @@ const getAluno = async (req, res) => {
 
 const createAluno = async (req, res) => {
     try {
-        const { name, sala_id } = req.body;
+        const { name, sala_id, idade } = req.body;
         const photo = req.file ? req.file.filename : null;
-        const newAluno = await alunoModel.createAluno(name, sala_id, photo);
+        const newAluno = await alunoModel.createAluno(name, sala_id, idade, photo);
         res.status(201).json(newAluno);
     } catch (error) {
+        console.error(error)
         res.status(500).json({ message: "Erro ao criar Aluno!" });
     }
 };

@@ -32,16 +32,16 @@ const getAlunoById = async (id) => {
 
 const createAluno = async (name, sala_id, idade, photo) => {
     const result = await pool.query(
-        "INSERT INTO alunos (name, sala_id, idade, photo) VALUES ($1, $2, $3) RETURNING *",
+        "INSERT INTO alunos (name, sala_id, idade, photo) VALUES ($1, $2, $3, $4) RETURNING *",
         [name, sala_id, idade, photo]
     );
     return result.rows[0];
 };
 
-const updateAluno = async (id, name, class_id, idade) => {
+const updateAluno = async (id, name, sala_id, idade) => {
     const result = await pool.query(
-        "UPDATE alunos SET name = $1, class_id = $2, idade = $3 WHERE id = $4 RETURNING *",
-        [name, class_id, idade, id]
+        "UPDATE alunos SET name = $1, sala_id = $2, idade = $3 WHERE id = $4 RETURNING *",
+        [name, sala_id, idade, id]
     );
     return result.rows[0];
 };
