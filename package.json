@@ -1,0 +1,30 @@
+{
+  "name": "backend-activity.evaluative.api.restful",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turco-vic/BackEnd-Activity.Evaluative.API.RESTful.git"
+  },
+  "keywords": ["SENAI", "API", "RESTful", "BackEnd"],
+  "author": "Enzo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turco-vic/BackEnd-Activity.Evaluative.API.RESTful/issues"
+  },
+  "homepage": "https://github.com/turco-vic/BackEnd-Activity.Evaluative.API.RESTful#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.15.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
