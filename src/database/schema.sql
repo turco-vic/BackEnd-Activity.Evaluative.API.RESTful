@@ -10,17 +10,17 @@ CREATE TABLE salas (
 CREATE TABLE alunos (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    idade INTEGER,
+    idade TEXT,
     sala_id INTEGER REFERENCES salas(id) ON DELETE SET NULL,
     photo TEXT
 );
 
 INSERT INTO salas (name) VALUES
-('Sala A'),
-('Sala B'),
-('Sala C'),
-('Sala D'),
-('Sala E');
+('Sala A1'),
+('Sala B2'),
+('Sala C3'),
+('Sala D4'),
+('Sala E5');
 
 INSERT INTO alunos (name, sala_id, idade, photo) VALUES
 ('Bernardo', 1, 11, NULL),

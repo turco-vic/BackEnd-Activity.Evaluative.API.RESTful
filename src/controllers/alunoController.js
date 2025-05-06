@@ -2,8 +2,8 @@ const alunoModel = require("../models/alunoModel");
 
 const getAllAlunos = async (req, res) => {
     try {
-        const {name} = req.query;
-        const alunos = await alunoModel.getAlunos(name);
+        const {idade} = req.query;
+        const alunos = await alunoModel.getAlunos(idade);
         res.json(alunos);
     } catch (error) {
         console.error(error)
