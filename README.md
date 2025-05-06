@@ -9,7 +9,7 @@ Este projeto é uma API RESTful desenvolvida com Node.js e Express, utilizando P
 - CRUD completo para as entidades Alunos e Salas.
 - Filtro de Alunos por idade.
 - Upload de fotos para Alunos.
-- Geração de relatórios em CSV ou PDF.
+- Geração de relatórios em PDF.
 - Segurança de rotas com API Key.
 - Documentação da API utilizando Postman.
 
@@ -18,9 +18,8 @@ Este projeto é uma API RESTful desenvolvida com Node.js e Express, utilizando P
 - Node.js
 - Express
 - PostgreSQL
-- Sequelize (ORM)
 - Multer (Upload de arquivos)
-- PDFKit ou Fast-CSV (Geração de relatórios)
+- PDFKit
 - Postman (Documentação)
 - Dotenv (Variáveis de ambiente)
 
@@ -68,12 +67,12 @@ A documentação completa da API está disponível no arquivo Postman Collection
 
 1. Abra o Postman.
 
-2. Importe o arquivo ????.
+2. Importe o arquivo (https://documenter.getpostman.com/view/37231923/2sB2j7cowk).
 
 3. Utilize as rotas conforme descrito na coleção.
 
 ## 📦 Geração de Relatórios
-A API permite a geração de relatórios em formato CSV ou PDF para as entidades. As rotas específicas para geração de relatórios estão documentadas na coleção do Postman.
+A API permite a geração de relatórios em PDF para as entidades. As rotas específicas para geração de relatórios estão documentadas na coleção do Postman.
 
 ## 🖼️ Upload de Fotos
 A entidade Aluno permite o upload de uma foto. Utilize a rota correspondente com o método POST e envie o arquivo no campo foto do formulário.
