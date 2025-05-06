@@ -18,7 +18,7 @@ const getAlunos = async (idade) => {
             [`%${idade}%`]);
         return result.rows;
     }
-};
+}; 
 
 const getAlunoById = async (id) => {
     const result = await pool.query(
