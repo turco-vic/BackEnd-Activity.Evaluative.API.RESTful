@@ -16,17 +16,20 @@ const exportAlunoPDF = async (req, res) => {
 
         doc.fontSize(12).font("Helvetica-Bold");
         doc.text("Id", 50, doc.y);
-        doc.text("Nome do Herói", 100, doc.y);
+        doc.text("Nome do Aluno", 100, doc.y);
+        doc.text("", 250, doc.y);
         doc.moveDown(0.5);
 
 
-        alunos.forEach((hero) => {
+        alunos.forEach((aluno) => {
             doc.fontSize(10).font("Helvetica");
             const currentY = doc.y;
 
-            doc.text(hero.id.toString(), 50, currentY, { width: 40 });
-            doc.text(hero.hero_name, 100, currentY, { width: 180 });
-            doc.text(hero.editor_name, 300, currentY, { width: 200 });
+            doc.text(aluno.id.toString(), 50, currentY, { width: 40 });
+            doc.text(aluno.aluno_name, 100, currentY, { width: 180 });
+            doc.text(aluno.aluno_idade, 100, currentY, { width: 180 });
+            doc.text(aluno.editor_name, 300, currentY, { width: 200 });
+            doc.text(aluno.editor_idade, 300, currentY, { width: 200 });
 
             doc.moveDown();
         });

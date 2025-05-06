@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const salaController = require("../controllers/salaController");
+const apiKeyMiddleware = require("../config/apiKey")
 
+router.use(apiKeyMiddleware);
 router.get("/", salaController.getAllSalas);
 router.get("/:id", salaController.getSala);
 router.post("/", salaController.createSala);
